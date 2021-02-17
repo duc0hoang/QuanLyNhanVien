@@ -20,7 +20,7 @@ document.querySelector('#btnThemNhanVien').onclick = function () {
 
     var tiepTucChay = true;
 
-    tiepTucChay &= validation.kiemTraDoDai(nv.maNhanVien, 'Mã nhân viên', '#kiemTraMaNhanVien', 4, 6) & validation.kiemTraTatCaLaKyTu(nv.tenNhanVien, 'Tên nhân viên', '#kiemTraTenNhanVien') & validation.kiemTraGiaTri(nv.luongCoBan, 'Lương cơ bản', '#kiemTraLuongCoBan', 1000000, 20000000) & validation.kiemTraGiaTri(nv.soGioLamTrongThang, 'Số giờ làm trong tháng', '#kiemTraSoGioLam', 50, 150);
+    tiepTucChay &= validation.kiemTraGiaTri(nv.maNhanVien, 'Mã nhân viên', '#kiemTraMaNhanVien', 1000, 999999) & validation.kiemTraTatCaLaKyTu(nv.tenNhanVien, 'Tên nhân viên', '#kiemTraTenNhanVien') & validation.kiemTraGiaTri(nv.luongCoBan, 'Lương cơ bản', '#kiemTraLuongCoBan', 1000000, 20000000) & validation.kiemTraGiaTri(nv.soGioLamTrongThang, 'Số giờ làm trong tháng', '#kiemTraSoGioLam', 50, 150);
 
     if (!tiepTucChay) {
         return;

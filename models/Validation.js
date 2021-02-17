@@ -10,9 +10,13 @@ var Validation = function(){
     }
 
     this.kiemTraGiaTri = function (value, name, selectorError, minValue, maxValue){
-
+        var regexLetter = /^[0-9]+$/;
         if(Number(value)  < minValue || Number(value) > maxValue){
             document.querySelector(selectorError).innerHTML = name + ' phải từ ' + minValue + ' đến ' + maxValue + ' !';
+            return false;
+        }
+        if (!regexLetter.test(value)) {
+            document.querySelector(selectorError).innerHTML = name + ' tất cả phải là số!';
             return false;
         }
         document.querySelector(selectorError).innerHTML = '';
